@@ -31,4 +31,12 @@ do_install() {
     install -d ${D}${bindir}
 
     install -m 0755 ${S}/usr/bin/telegraf ${D}${bindir}/
+
+    # /usr/lib
+    install -d ${D}${libdir}/telegraf/scripts
+
+    install -m 0644 ${S}/usr/lib/telegraf/scripts/init.sh ${D}${libdir}/telegraf/scripts/
+    install -m 0644 ${S}/usr/lib/telegraf/scripts/telegraf.service ${D}${libdir}/telegraf/scripts/
+
+    
 }
