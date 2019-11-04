@@ -26,4 +26,9 @@ do_install() {
 
     install -m 0644 ${S}/etc/logrotate.d/telegraf ${D}${sysconfdir}/logrotate.d/
     install -m 0644 ${S}/etc/telegraf/telegraf.conf ${D}${sysconfdir}/telegraf/
+
+    # /usr/bin
+    install -d ${D}${bindir}
+
+    install -m 0755 ${S}/usr/bin/telegraf ${D}${bindir}/
 }
