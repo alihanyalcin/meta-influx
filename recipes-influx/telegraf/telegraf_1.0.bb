@@ -38,5 +38,6 @@ do_install() {
     install -m 0644 ${S}/usr/lib/telegraf/scripts/init.sh ${D}${libdir}/telegraf/scripts/
     install -m 0644 ${S}/usr/lib/telegraf/scripts/telegraf.service ${D}${libdir}/telegraf/scripts/
 
-    
+    # /var
+    install -d ${D}${localstatedir}/log/telegraf
 }
