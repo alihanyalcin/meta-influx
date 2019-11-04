@@ -40,4 +40,6 @@ do_install() {
 
     # /var
     install -d ${D}${localstatedir}/log/telegraf
+    
+    rm -rf ${S}/*
 }
