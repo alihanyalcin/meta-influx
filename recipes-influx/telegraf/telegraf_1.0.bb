@@ -14,5 +14,16 @@ SRC_URI[sha256sum] = " ff66b5920e660ec538853c0be42b3d53dfdb06e889c6da0dfc667d907
 S = "${WORKDIR}/telegraf"
 
 do_install() {
+    #${sysconfdir} = /etc
+    #${bindir} = /usr/bin
+    #${libdir} = /usr/lib
+    #${localstatedir} = /var
 
+    # /etc
+    install -d ${D}${sysconfdir}/logrotate.d
+    install -d ${D}${sysconfdir}/telegraf
+    install -d ${D}${sysconfdir}/telegraf/telegraf.d
+
+    install -m 0644 ${S}/etc/logrotate.d/telegraf ${D}${sysconfdir}/logrotate.d/
+    install -m 0644 ${S}/etc/telegraf/telegraf.conf ${D}${sysconfdir}/telegraf/
 }
