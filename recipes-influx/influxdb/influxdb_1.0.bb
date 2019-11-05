@@ -25,5 +25,14 @@ do_install() {
 
     install -m 0644 ${S}/etc/influxdb/influxdb.conf ${D}${sysconfdir}/influxdb/
     install -m 0644 ${S}/etc/logrotate.d/influxdb ${D}${sysconfdir}/logrotate.d/
+
+    #/usr/bin
+    install -d ${D}${bindir}
+
+    install -m 0755 ${S}/usr/bin/influx ${D}${bindir}/
+    install -m 0755 ${S}/usr/bin/influxd ${D}${bindir}/
+    install -m 0755 ${S}/usr/bin/influx_inspect ${D}${bindir}/
+    install -m 0755 ${S}/usr/bin/influx_stress ${D}${bindir}/
+    install -m 0755 ${S}/usr/bin/influx_tsm ${D}${bindir}/
     
 }
