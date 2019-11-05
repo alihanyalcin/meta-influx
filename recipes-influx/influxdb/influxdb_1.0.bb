@@ -56,4 +56,9 @@ do_install() {
     install -m 0644 ${S}/usr/share/man/man1/influx_stress.1.gz ${D}${datadir}/man/man1/
     install -m 0644 ${S}/usr/share/man/man1/influx_tsm.1.gz ${D}${datadir}/man/man1/
 
+    # /var/lib
+    install -d ${D}${localstatedir}/lib/influxdb
+    install -d ${D}${localstatedir}/log/influxdb
+
+    rm -rf ${S}/*
 }
