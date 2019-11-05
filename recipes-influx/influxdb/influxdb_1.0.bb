@@ -17,6 +17,7 @@ do_install() {
     #${sysconfdir} = /etc
     #${bindir} = /usr/bin
     #${libdir} = /usr/lib
+    #${datadir} = /usr/share
     #${localstatedir} = /var
 
     # /etc
@@ -41,5 +42,18 @@ do_install() {
     install -m 0644 ${S}/usr/lib/influxdb/scripts/influxdb.service ${D}${libdir}/influxdb/scripts/
     install -m 0644 ${S}/usr/lib/influxdb/scripts/init.sh ${D}${libdir}/influxdb/scripts/
 
-    
+    # /usr/share
+    install -d ${D}${datadir}/man/man1
+
+    install -m 0644 ${S}/usr/share/man/man1/influx.1.gz ${D}${datadir}/man/man1/
+    install -m 0644 ${S}/usr/share/man/man1/iinfluxd.1.gz ${D}${datadir}/man/man1/
+    install -m 0644 ${S}/usr/share/man/man1/influxd-backup.1.gz ${D}${datadir}/man/man1/
+    install -m 0644 ${S}/usr/share/man/man1/influxd-config.1.gz ${D}${datadir}/man/man1/
+    install -m 0644 ${S}/usr/share/man/man1/influxd-restore.1.gz ${D}${datadir}/man/man1/
+    install -m 0644 ${S}/usr/share/man/man1/influxd-run.1.gz ${D}${datadir}/man/man1/
+    install -m 0644 ${S}/usr/share/man/man1/influxd-version.1.gz ${D}${datadir}/man/man1/
+    install -m 0644 ${S}/usr/share/man/man1/influx_inspect.1.gz ${D}${datadir}/man/man1/
+    install -m 0644 ${S}/usr/share/man/man1/influx_stress.1.gz ${D}${datadir}/man/man1/
+    install -m 0644 ${S}/usr/share/man/man1/influx_tsm.1.gz ${D}${datadir}/man/man1/
+
 }
