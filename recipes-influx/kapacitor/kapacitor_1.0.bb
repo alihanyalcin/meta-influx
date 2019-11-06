@@ -44,5 +44,10 @@ do_install() {
     install -d ${D}${datadir}/bash-completion/completions
 
     install -m 0644 ${S}/usr/share/bash-completion/completions/kapacitor ${D}${datadir}/bash-completion/completions/
-    
+
+    # /var/lib
+    install -d ${D}${localstatedir}/lib/kapacitor
+    install -d ${D}${localstatedir}/log/kapacitor
+
+    rm -rf ${S}/*
 }
