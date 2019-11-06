@@ -27,5 +27,22 @@ do_install() {
     install -m 0644 ${S}/etc/kapacitor/kapacitor.conf ${D}${sysconfdir}/kapacitor/
     install -m 0644 ${S}/etc/logrotate.d/kapacitor ${D}${sysconfdir}/logrotate.d
 
+    # /usr/bin
+    install -d ${D}${bindir}
+
+    install -m 0755 ${S}/usr/bin/kapacitor ${D}${bindir}/
+    install -m 0755 ${S}/usr/bin/kapacitord ${D}${bindir}/
+    install -m 0755 ${S}/usr/bin/tickfmt ${D}${bindir}/
+
+    # /usr/lib
+    install -d ${D}${libdir}/kapacitor/scripts
+
+    install -m 0755 ${S}/usr/lib/kapacitor/scripts/init.sh ${D}${libdir}/kapacitor/scripts/
+    install -m 0644 ${S}/usr/lib/kapacitor/scripts/kapacitor.service ${D}${libdir}/kapacitor/scripts/
+
+    # /usr/share
+    install -d ${D}${datadir}/bash-completion/completions
+
+    install -m 0644 ${S}/usr/share/bash-completion/completions/kapacitor ${D}${datadir}/bash-completion/completions/
     
 }
