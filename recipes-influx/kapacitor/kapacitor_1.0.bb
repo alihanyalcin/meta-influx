@@ -14,5 +14,18 @@ INSANE_SKIP_${PN}_append = "already-stripped"
 S = "${WORKDIR}/kapacitor-1.5.3-1"
 
 do_install() {
+    #${sysconfdir} = /etc
+    #${bindir} = /usr/bin
+    #${libdir} = /usr/lib
+    #${datadir} = /usr/share
+    #${localstatedir} = /var
+
+    # /etc
+    install -d ${D}${sysconfdir}/kapacitor
+    install -d ${D}${sysconfdir}/logrotate.d
+
+    install -m 0644 ${S}/etc/kapacitor/kapacitor.conf ${D}${sysconfdir}/kapacitor/
+    install -m 0644 ${S}/etc/logrotate.d/kapacitor ${D}${sysconfdir}/logrotate.d
+
     
 }
