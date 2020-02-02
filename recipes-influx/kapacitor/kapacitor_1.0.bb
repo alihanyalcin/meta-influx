@@ -2,13 +2,10 @@ DESCRIPTION = "KAPACITOR 1.5.3"
 
 PR = "r1"
 
-SRC_URI = "https://dl.influxdata.com/kapacitor/releases/kapacitor-1.5.3_linux_armhf.tar.gz \
-          file://LICENSE \
-          "
+SRC_URI = "https://dl.influxdata.com/kapacitor/releases/kapacitor-1.5.3_linux_armhf.tar.gz"
 SRC_URI[sha256sum] = "5ee8c333299f25e56c5b65953e0f1fc22c452d3c2782cc3c41db6cb59ef3ff4c"
 
-LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://${WORKDIR}/LICENSE;md5=d41d8cd98f00b204e9800998ecf8427e"
+LICENSE = "CLOSED"
 
 INSANE_SKIP_${PN}_append = "already-stripped"
 
@@ -38,10 +35,10 @@ do_install() {
     install -m 0755 ${S}/usr/bin/tickfmt ${D}${bindir}/
 
     # /usr/lib
-    install -d ${D}${libdir}/kapacitor/scripts
-
-    install -m 0755 ${S}/usr/lib/kapacitor/scripts/init.sh ${D}${libdir}/kapacitor/scripts/
-    install -m 0644 ${S}/usr/lib/kapacitor/scripts/kapacitor.service ${D}${libdir}/kapacitor/scripts/
+    install -d ${D}${systemd_unitdir}/system
+    install -m 0644 ${S}/usr/lib/kapacitor/scripts/kapacitor.service ${D}${systemd_unitdir}/system
+    #install -m 0755 ${S}/usr/lib/kapacitor/scripts/init.sh ${D}${libdir}/kapacitor/scripts/
+    #install -m 0644 ${S}/usr/lib/kapacitor/scripts/kapacitor.service ${D}${libdir}/kapacitor/scripts/
 
     # /usr/share
     install -d ${D}${datadir}/bash-completion/completions
@@ -52,5 +49,6 @@ do_install() {
     install -d ${D}${localstatedir}/lib/kapacitor
     install -d ${D}${localstatedir}/log/kapacitor
 
-    rm -rf ${S}/*
 }
+inherit systemd
+SYSTEMD_SERVICE_${PN} = "kapacitor.service"
