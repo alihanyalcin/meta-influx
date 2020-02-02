@@ -31,13 +31,16 @@ do_install() {
     install -m 0755 ${S}/usr/bin/telegraf ${D}${bindir}/
 
     # /usr/lib
-    install -d ${D}${libdir}/telegraf/scripts
+    install -d ${D}${systemd_unitdir}/system
+    install -m 0644 ${S}/usr/lib/telegraf/scripts/telegraf.service ${D}${systemd_unitdir}/system
 
-    install -m 0644 ${S}/usr/lib/telegraf/scripts/init.sh ${D}${libdir}/telegraf/scripts/
-    install -m 0644 ${S}/usr/lib/telegraf/scripts/telegraf.service ${D}${libdir}/telegraf/scripts/
+    #install -m 0644 ${S}/usr/lib/telegraf/scripts/init.sh ${D}${libdir}/telegraf/scripts/
+    #install -m 0644 ${S}/usr/lib/telegraf/scripts/telegraf.service ${D}${libdir}/telegraf/scripts/
 
     # /var
     install -d ${D}${localstatedir}/log/telegraf
     
-    rm -rf ${S}/*
 }
+
+inherit systemd
+SYSTEMD_SERVICE_${PN} = "telegraf.service"
