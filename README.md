@@ -19,3 +19,6 @@ This Yocto meta layer contains all the recipes needed to build the TICK Stack (T
 
 ## Tested Hardware
 - raspberrypi3
+
+## Tested Yocto Project Releases:
+- zeus (3.0)
