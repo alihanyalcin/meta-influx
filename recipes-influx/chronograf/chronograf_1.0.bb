@@ -27,8 +27,11 @@ do_install() {
     install -m 0755 ${S}/usr/bin/* ${D}${bindir}
 
     # /usr/lib
-    install -d ${D}${libdir}/chronograf/scripts
-    install -m 0644 ${S}/usr/lib/chronograf/scripts/* ${D}${libdir}/chronograf/scripts
+    #install -d ${D}${libdir}/chronograf/scripts
+    #install -m 0644 ${S}/usr/lib/chronograf/scripts/* ${D}${libdir}/chronograf/scripts
+    install -d ${D}${systemd_unitdir}/system
+    install -m 0644 ${S}/usr/lib/chronograf/scripts/chronograf.service ${D}${systemd_unitdir}/system
+
 
     # /usr/share
     install -d ${D}${datadir}/chronograf/canned
@@ -42,3 +45,6 @@ do_install() {
     install -d ${D}${localstatedir}/log/chronograf
 
 }
+
+inherit systemd
+SYSTEMD_SERVICE_${PN} = "chronograf.service"
