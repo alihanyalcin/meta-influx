@@ -30,6 +30,8 @@ do_install() {
     #install -d ${D}${libdir}/chronograf/scripts
     #install -m 0644 ${S}/usr/lib/chronograf/scripts/* ${D}${libdir}/chronograf/scripts
     install -d ${D}${systemd_unitdir}/system
+    sed -i 's/User=chronograf/User=root/g' ${S}/usr/lib/chronograf/scripts/chronograf.service
+    sed -i 's/Group=chronograf/Group=root/g' ${S}/usr/lib/chronograf/scripts/chronograf.service
     install -m 0644 ${S}/usr/lib/chronograf/scripts/chronograf.service ${D}${systemd_unitdir}/system
 
 
@@ -45,6 +47,11 @@ do_install() {
     install -d ${D}${localstatedir}/log/chronograf
 
 }
+
+inherit extrausers
+EXTRA_USERS_PARAMS = "useradd chronograf; \
+                      groupadd chronograf; \
+                      "
 
 inherit systemd
 SYSTEMD_SERVICE_${PN} = "chronograf.service"

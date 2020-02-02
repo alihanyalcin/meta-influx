@@ -36,6 +36,8 @@ do_install() {
 
     # /usr/lib
     install -d ${D}${systemd_unitdir}/system
+    sed -i 's/User=kapacitor/User=root/g' ${S}/usr/lib/kapacitor/scripts/kapacitor.service
+    sed -i 's/Group=kapacitor/Group=root/g' ${S}/usr/lib/kapacitor/scripts/kapacitor.service
     install -m 0644 ${S}/usr/lib/kapacitor/scripts/kapacitor.service ${D}${systemd_unitdir}/system
     #install -m 0755 ${S}/usr/lib/kapacitor/scripts/init.sh ${D}${libdir}/kapacitor/scripts/
     #install -m 0644 ${S}/usr/lib/kapacitor/scripts/kapacitor.service ${D}${libdir}/kapacitor/scripts/
