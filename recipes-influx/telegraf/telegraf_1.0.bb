@@ -3,7 +3,7 @@ DESCRIPTION = "TELEGRAF 1.13.0"
 PR = "r1"
 
 SRC_URI = "https://dl.influxdata.com/telegraf/releases/telegraf-1.13.0_linux_armhf.tar.gz"
-SRC_URI[sha256sum] = " fceeeba915e462b1559eb1ebe287dfa293e96c33b4c181f6328e9775e6d5ecbc"
+SRC_URI[sha256sum] = "fceeeba915e462b1559eb1ebe287dfa293e96c33b4c181f6328e9775e6d5ecbc"
 
 LICENSE = "CLOSED"
 
