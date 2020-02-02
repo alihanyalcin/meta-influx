@@ -47,11 +47,5 @@ do_install() {
     install -d ${D}${localstatedir}/log/chronograf
 
 }
-
-inherit extrausers
-EXTRA_USERS_PARAMS = "useradd chronograf; \
-                      groupadd chronograf; \
-                      "
-
 inherit systemd
 SYSTEMD_SERVICE_${PN} = "chronograf.service"
