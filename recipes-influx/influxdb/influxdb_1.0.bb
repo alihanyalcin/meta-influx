@@ -1,4 +1,6 @@
-DESCRIPTION = "INFLUXDB 1.7.9"
+DESCRIPTION = "InfluxDB 1.7.9"
+SUMMARY = "InfluxDB is a time series database designed to handle high write and query loads."
+HOMEPAGE = "https://www.influxdata.com/products/influxdb-overview/"
 
 PR = "r1"
 

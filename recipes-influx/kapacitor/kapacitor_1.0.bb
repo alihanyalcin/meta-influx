@@ -1,4 +1,6 @@
-DESCRIPTION = "KAPACITOR 1.5.3"
+DESCRIPTION = "Kapacitor 1.5.3"
+SUMMARY = "Kapacitor is a real-time streaming data processing engine."
+HOMEPAGE = "https://www.influxdata.com/time-series-platform/kapacitor/"
 
 PR = "r1"
 

@@ -1,4 +1,6 @@
-DESCRIPTION = "CHRONOGRAF 1.7.16"
+DESCRIPTION = "Chronograf 1.7.16"
+SUMMARY = "Chronograf is the complete interface for the InfluxDB 1.x Platform"
+HOMEPAGE = "https://www.influxdata.com/time-series-platform/chronograf/"
 
 PR = "r1"
 
