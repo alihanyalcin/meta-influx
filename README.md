@@ -18,7 +18,12 @@ This Yocto meta layer contains all the recipes needed to build the TICK Stack (T
 -  Run `bitbake <image name>`
 
 ## Tested Hardware
-- raspberrypi3
+- Raspberry Pi 3 
+- Colibri T30
+- Variscite DART-6UL
 
-## Tested Yocto Project Releases:
-- zeus (3.0)
+## Tested Yocto Project Releases
+- Zeus (3.0)
+- Thud (2.6)
+- Sumo (2.5)
+- Rocko (2.4)
