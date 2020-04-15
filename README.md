@@ -1,3 +1,4 @@
+[![meta-influx](https://godoc.org/github.com/alihanyalcin/mqtt-wrapper?status.svg)](https://layers.openembedded.org/layerindex/branch/master/layer/meta-influx/)
 # meta-influx
 This Yocto meta layer contains all the recipes needed to build the TICK Stack (Telegraf, InfluxDB, Chronograf, Kapacitor) into a Yocto image for ARM architecture.
 
