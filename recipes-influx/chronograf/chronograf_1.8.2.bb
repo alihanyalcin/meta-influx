@@ -1,9 +1,5 @@
 require chronograf.inc
 
-DESCRIPTION = "Chronograf 1.8.2"
-SUMMARY = "Chronograf is the complete interface for the InfluxDB 1.x Platform"
-HOMEPAGE = "https://www.influxdata.com/time-series-platform/chronograf/"
-
 PR = "r1"
 
 LICENSE = "CLOSED"
