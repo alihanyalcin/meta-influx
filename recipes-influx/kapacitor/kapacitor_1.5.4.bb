@@ -1,9 +1,5 @@
 require kapacitor.inc
 
-DESCRIPTION = "Kapacitor 1.5.4"
-SUMMARY = "Kapacitor is a real-time streaming data processing engine."
-HOMEPAGE = "https://www.influxdata.com/time-series-platform/kapacitor/"
-
 PR = "r1"
 
 LICENSE = "CLOSED"

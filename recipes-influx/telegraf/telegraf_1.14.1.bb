@@ -1,9 +1,5 @@
 require telegraf.inc
 
-DESCRIPTION = "Telegraf 1.14.1"
-SUMMARY = "Telegraf is the open source server agent to help you collect metrics from your stacks, sensors and systems."
-HOMEPAGE = "https://www.influxdata.com/time-series-platform/telegraf/"
-
 PR = "r1"
 
 LICENSE = "CLOSED"
